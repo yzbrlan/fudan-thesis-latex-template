@@ -1,0 +1,162 @@
+\documentclass[UTF8,a4paper,12pt]{ctexart}%需要UTF8编码
+
+\usepackage{cite}
+\usepackage[numbers,sort&compress]{natbib} %参数代表：数字和排序与压缩
+\bibliographystyle{plain} %参考文献格式设为GBT7714-2005N.bst
+\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+\usepackage{url}
+
+\usepackage[draft=false,colorlinks=true,CJKbookmarks=true,linkcolor=black,citecolor=green,urlcolor=blue]{hyperref} %参考文献跳转，此宏包会自动载入graphicx
+
+\usepackage[top=3cm,bottom=2cm,left=2cm,right=2cm]{geometry} % 页边距
+
+\usepackage{longtable}%生成跨页的表格
+\usepackage{array} % for extrarowheight
+\setlength{\extrarowheight}{1.5pt}
+
+\usepackage{pdfpages}%插入封面
+
+\usepackage{latexsym}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\bfseries \leftmark}
+\chead{}
+\rhead{\thepage}
+\cfoot{姓名 16300000001}
+\lfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\title{论文模板}
+\author{姓名 16300000001}
+\date{}
+
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{ %
+  language=Octave,                % the language of the code
+  basicstyle=\footnotesize,           % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each 
+  %line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},      % choose the background color. You must 
+  %add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular 
+  %underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on 
+  %line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at 
+  %whitespace
+  title=\lstname,                   % show the filename of files included with 
+  %\lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+  
+\begin{document}
+	\includepdf{Book-Cover.pdf}   // 是否带封面
+%\maketitle
+
+\begin{abstract}
+	这里是摘要
+\end{abstract}
+\noindent\zihao{4}\textbf{关键词}\quad\zihao{-4} 乙肝；预防；；变分法
+
+\tableofcontents %生成目录
+\setcounter{page}{0}
+\thispagestyle{empty}
+\begin{lstlisting}[title=Myfile, frame=shadowbox]
+ numbers=left, 
+    numberstyle= \tiny, 
+    keywordstyle= \color{ blue!70},
+    commentstyle= \color{red!50!green!50!blue!50}, 
+    frame=shadowbox, % 阴影效果
+    rulesepcolor= \color{ red!20!green!20!blue!20} ,
+    escapeinside=``, % 英文分号中可写入中文
+    xleftmargin=2em,xrightmargin=2em, aboveskip=1em,
+    framexleftmargin=2em
+% 代码段
+\end{lstlisting}
+
+  \begin{center}
+  \begin{figure}
+  	\centering
+  	\includegraphics[width=10cm,totalheight=2in]{ }
+  	\caption{注释}
+  	\label{fig1}
+  \end{figure}
+  \end{center}
+  
+Paste your own text here and click the 'Check Text' button. Click the colored 
+phrases for details on pot ential errors. or use this text too see an few of of the 
+problems that LanguageTool can detect. What do you thinks of grammar 
+checkers? Please not that they are not perfect. Style issues get a blue marker: It's 
+5 P.M. in the afternoon. LanguageTool 3.8 was released on Thursday, 27 June 
+2017.
+\begin{center}
+	\begin{longtable}{|c|c|c|c|}
+		\caption{A simple longtable example}\\
+		\hline
+		\textbf{First entry} & \textbf{Second entry} & \textbf{Third entry} & \textbf{Fourth entry} \\
+		\hline
+		\endfirsthead
+		\multicolumn{4}{c}%
+		{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+		\hline
+		\textbf{First entry} & \textbf{Second entry} & \textbf{Third entry} & \textbf{Fourth entry} \\
+		\hline
+		\endhead
+		\hline \multicolumn{4}{r}{\textit{Continued on next page}} \\
+		\endfoot
+		\hline
+		\endlastfoot
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+		1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\ 1 & 2 & 3 & 4 \\
+	\end{longtable}
+\end{center}
+
+\begin{center}
+	\begin{longtable}{|p{1cm}|p{2cm}|p{3cm}|p{4cm}|}
+		\hline
+		\#&指令&描述&使用场景\\ \hline \hline
+		\endhead
+	\end{longtable}
+\end{center}
+
+\begin{center}
+	\begin{tabular}{|p{5cm}|p{6cm}|}
+		\hline
+		\multicolumn{2}{|p{11cm}|}{\textbf{Class  CalendarItem:}该类继承自Calend}\\ \hline
+		set(String)& 参数为用户新加入的事项，用于修改text。\textcolor{red}{注意传入的为null，抛出自定义异常}\\ \hline
+	\end{tabular}
+\end{center}
+
+\bibliography{try}%记得需要F8
+\end{document}

@@ -1,0 +1,86 @@
+% !TEX encoding = UTF-8 Unicode
+% XeLaTeX can use any Mac OS X font. See the setromanfont command below.
+% Input to XeLaTeX is full Unicode, so Unicode characters can be typed directly into the source.
+
+% The next lines tell TeXShop to typeset with xelatex, and to open and save the source with Unicode encoding.
+
+%!TEX TS-program = xelatex
+%\documentclass[UTF8,a4paper,12pt]{ctexart}%需要UTF8编码
+
+\documentclass[12pt]{article}
+\usepackage[bottom=3cm]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}       
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{calc}
+\usepackage{graphicx}
+\pagestyle{empty}
+
+
+%CJK Font Setup
+\usepackage[PunctStyle=kaiming,AutoFakeBold=false,AutoFakeSlant=false]{xeCJK}
+%\setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={KaiTi}] {SimSun}
+%\setCJKsansfont[BoldFont={Heiti SC Medium}]{Heiti SC}
+%\setCJKmonofont[BoldFont={Hiragino Sans GB W6}]{Hiragino Sans GB W3}
+
+% Will Robertson's fontspec.sty can be used to simplify font choices.
+% To experiment, open /Applications/Font Book to examine the fonts provided on Mac OS X,
+% and change "Hoefler Text" to any of these choices.
+
+%English Font Setup
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont{Times New Roman}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Calibri}
+\setmonofont[Scale=MatchLowercase]{Courier New}
+
+
+\author{Zu Yuan $<$\href{mailto:xxxxx@gmail.com}%
+            {xxxx@gmail.com}$>$}
+%\date{}                                         % Activate to display a given date or no date
+
+\newlength{\Han}
+\settowidth{\Han}{汉}
+\newcommand{\spreadCJK}[2]{\makebox[#1\Han][s]{#2}}
+
+\begin{document}
+\setlength{\headsep}{0cm}
+
+\begin{flushright}
+\parbox[c]{6em}{ %
+{\small \makebox[\width][c]{学校代码:\quad10246 }\par
+\makebox[\width][c]{学\phantom{占位}号:\quad 16300000001}}}
+\end{flushright}
+\vspace{\stretch{0.5}}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{FudanLOGO.eps}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=0.2\textwidth]{xiaohui.eps}
+	\end{center}
+\end{figure}
+
+\vspace{\stretch{0.5}}
+\begin{center}
+{\Huge \makebox [0.45\textwidth][s]{课程论文}\par}
+\vspace{\stretch{1.5}}
+{\LARGE \textsf{论文标题分析}\par}
+\vspace{\stretch{0.5}}
+{\Large \textrm{Stability Analysis of Coupled Longitudinal Oscillation of Liquid Rocket}\par}
+
+\vspace{\stretch{2}}
+\parbox[c]{0.5\textwidth}{%
+\large \setlength{\baselineskip}{1.5\baselineskip}%
+\spreadCJK{8}{院系}:\quad xx学院\par
+\spreadCJK{8}{专业}:\quad xx工程\par
+\spreadCJK{8}{姓名}:\quad 姓名\par
+\spreadCJK{8}{指导老师}:\quad xxx \quad 教授\par
+\spreadCJK{8}{完成日期}:\quad 2014年4月1日}
+\end{center}
+
+\end{document}  
