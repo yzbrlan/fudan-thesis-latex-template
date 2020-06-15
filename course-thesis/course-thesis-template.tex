@@ -1,8 +1,7 @@
 \documentclass[UTF8,a4paper,12pt]{ctexart}%需要UTF8编码
 
-\usepackage{cite}
 \usepackage[numbers,sort&compress]{natbib} %参数代表：数字和排序与压缩
-\bibliographystyle{plain} %参考文献格式设为GBT7714-2005N.bst
+\bibliographystyle{gbt7714-2005} %参考文献格式设为GBT7714-2005N.bst
 \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
 \usepackage{url}
 
@@ -14,6 +13,12 @@
 \usepackage{array} % for extrarowheight
 \setlength{\extrarowheight}{1.5pt}
 
+
+\usepackage[american]{babel}%它的引用是遇单词换行的时候，确保单词的切割是按照音节来而不是随意切割。这会让作为native speaker的审稿人赏心悦目，心中暗爽。
+\usepackage{microtype}%它的最大特点就是能够调整全篇文章（或局部）的字间距，字间距最大调整范围为±1em。可使得某段落不会出现单独一个单词占一行，或文章末尾单独一行文字占一页的不美观情况（注，该包在NIPS中自带引用；而ECCV由于LNCS在排版方面的一些限制因素，不推荐在ECCV中使用该包引用）；
+
+\setCJKmainfont{STKaitiSC-Regular} %中文字体
+
 \usepackage{pdfpages}%插入封面
 
 \usepackage{latexsym}
@@ -23,11 +28,11 @@
 \lhead{\bfseries \leftmark}
 \chead{}
 \rhead{\thepage}
-\cfoot{姓名 16300000001}
+%\cfoot{姓名 16300000001}
 \lfoot{}
 \rfoot{}
 \renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
 \title{论文模板}
 \author{姓名 16300000001}
 \date{}
@@ -80,6 +85,7 @@
 \noindent\zihao{4}\textbf{关键词}\quad\zihao{-4} 乙肝；预防；；变分法
 
 \tableofcontents %生成目录
+\listoffigures% 插图目录
 \setcounter{page}{0}
 \thispagestyle{empty}
 \begin{lstlisting}[title=Myfile, frame=shadowbox]
@@ -95,14 +101,12 @@
 % 代码段
 \end{lstlisting}
 
-  \begin{center}
-  \begin{figure}
-  	\centering
-  	\includegraphics[width=10cm,totalheight=2in]{ }
-  	\caption{注释}
-  	\label{fig1}
-  \end{figure}
-  \end{center}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{fenbu.jpg}
+		\caption{我国鼠疫自然疫源地的地理分布}
+\label{fig:fenbu}
+\end{figure}
   
 Paste your own text here and click the 'Check Text' button. Click the colored 
 phrases for details on pot ential errors. or use this text too see an few of of the 
@@ -158,5 +162,7 @@ checkers? Please not that they are not perfect. Style issues get a blue marker: 
 	\end{tabular}
 \end{center}
 
+\newpage
+\addcontentsline{toc}{section}{References}
 \bibliography{try}%记得需要F8
 \end{document}
