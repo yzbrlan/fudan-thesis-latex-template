@@ -16,6 +16,19 @@
 
 \usepackage[american]{babel}%它的引用是遇单词换行的时候，确保单词的切割是按照音节来而不是随意切割。这会让作为native speaker的审稿人赏心悦目，心中暗爽。
 \usepackage{microtype}%它的最大特点就是能够调整全篇文章（或局部）的字间距，字间距最大调整范围为±1em。可使得某段落不会出现单独一个单词占一行，或文章末尾单独一行文字占一页的不美观情况（注，该包在NIPS中自带引用；而ECCV由于LNCS在排版方面的一些限制因素，不推荐在ECCV中使用该包引用）；
+\addto\captionsamerican{
+	\renewcommand\contentsname{目录} 
+	\renewcommand\listfigurename{插图目录} 
+	\renewcommand\listtablename{表格目录} 
+	\renewcommand\refname{参考文献} 
+	\renewcommand\indexname{索引} 
+	\renewcommand\figurename{图} 
+	\renewcommand\tablename{表} 
+	\renewcommand\abstractname{摘要} 
+	\renewcommand\partname{部分} 
+	\renewcommand\appendixname{附录} 
+	\renewcommand\today{\number\year年\number\month月\number\day日} 
+}
 
 \setCJKmainfont{STKaitiSC-Regular} %中文字体
 
@@ -163,6 +176,6 @@ checkers? Please not that they are not perfect. Style issues get a blue marker: 
 \end{center}
 
 \newpage
-\addcontentsline{toc}{section}{References}
+\addcontentsline{toc}{section}{参考文献}
 \bibliography{try}%记得需要F8
 \end{document}
