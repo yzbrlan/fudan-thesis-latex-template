@@ -30,13 +30,13 @@
 %   5. 不需要的注释可以尽情删除
 %*********************************************************************
 
-\documentclass{fduthesis}
+%\documentclass{fduthesis}
 % 模板选项：
 %   type = doctor|master|bachelor  论文类型，默认为本科论文
 %   oneside|twoside                论文的单双面模式，默认为 twoside
 %   draft = true|false             是否开启草稿模式，默认关闭
 % 带选项的用法示例：
-%   \documentclass[oneside]{fduthesis}
+   \documentclass[oneside]{fduthesis}
 %   \documentclass[twoside, draft=true]{fduthesis}
 %   \documentclass[type=bachelor, twoside, draft=true]{fduthesis}
 
@@ -378,5 +378,9 @@ $\ket{\downarrow}$。
 
 % 打印参考文献列表
 \printbibliography
+
+\chapter*{致谢}
+\addcontentsline{toc}{chapter}{致谢}
+% 在这里写致谢
 
 \end{document}
