@@ -12,3 +12,5 @@ del *.lol /s
 del *.lot /s
 del *.fdb_latexmk /s
 del *.synctex.gz /s
+del *.bcf /s
+del *.run.xml /s
