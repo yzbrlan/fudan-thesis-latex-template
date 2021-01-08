@@ -15,3 +15,5 @@
 - 单面适合论文提交，双面适合打印。具体可以修改模版中的  \documentclass{}
 
 - 编译的时候，设置 xelatex -> biblatex -> xelatex
+
+- 具体使用指南文档请看：[复旦大学论文模板](https://mirror-hk.koddos.net/CTAN/macros/latex/contrib/fduthesis/fduthesis.pdf)
