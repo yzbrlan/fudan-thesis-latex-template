@@ -1,6 +1,15 @@
 # fudan-thesis-latex-template
 
+## Course-thesis
+
+- 参考文献样式：采用了 gbt7714-2005 参考标准，具体下载链接为 https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style
+
+- 编译的时候，设置 xelatex -> biblatex -> xelatex
+
+  
+
 ## graduation-thesis
+
 来源于复旦 @ Xiangdong Zeng 的项目 https://github.com/stone-zeng/fduthesis
 
 在以上latex模板的基础上，针对毕业论文，修改了一些配置。
