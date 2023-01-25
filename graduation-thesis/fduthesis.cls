@@ -706,7 +706,7 @@
         format      = \huge \normalfont \sffamily \centering,
         beforeskip  = 50 pt,
         afterskip   = 40 pt,
-        number      = \__fdu_arabic:n { chapter },
+        number      = \zhdigits{\__fdu_arabic:n { chapter }},
         fixskip     = true
       },
     section =
@@ -1138,37 +1138,77 @@
         \c__fdu_fwid_right_paren_tl
       }
   }
-\cs_new_protected:Npn \__fdu_cover_info:
+% \cs_new_protected:Npn \__fdu_cover_info:
+%   {
+%     \begin{minipage} [ c ] { \textwidth }
+%       \centering \zihao { 4 }
+%       \clist_set:Nx \l__fdu_tmpa_clist
+%         {
+%           \c__fdu_name_department_tl,
+%           \c__fdu_name_major_tl,
+%           \c__fdu_name_author_tl,
+%           \c__fdu_name_supervisor_tl,
+%           \c__fdu_name_date_tl,
+%         }
+%       \clist_set:Nx \l__fdu_tmpb_clist
+%         {
+%           { \l__fdu_info_department_tl },
+%           { \l__fdu_info_major_tl      },
+%           { \l__fdu_info_author_tl     },
+%           { \l__fdu_info_supervisor_tl },
+%           { \l__fdu_info_date_tl       }
+%         }
+%       \__fdu_get_max_text_width:NN \l__fdu_tmpb_dim \l__fdu_tmpb_clist
+%       \bool_until_do:nn
+%         { \clist_if_empty_p:N \l__fdu_tmpa_clist }
+%         {
+%           \clist_pop:NN \l__fdu_tmpa_clist \l__fdu_tmpa_tl
+%           \clist_pop:NN \l__fdu_tmpb_clist \l__fdu_tmpb_tl
+%           \__fdu_spread_box:nn { 6 em } { \l__fdu_tmpa_tl }
+%           \c__fdu_fwid_colon_tl
+%           \__fdu_center_box:Vn \l__fdu_tmpb_dim { \l__fdu_tmpb_tl }
+%           \skip_vertical:n { 1 ex }
+%         }
+%     \end{minipage}
+%   }
+\cs_set_protected:Npn \__fdu_cover_info:
   {
     \begin{minipage} [ c ] { \textwidth }
       \centering \zihao { 4 }
-      \clist_set:Nx \l__fdu_tmpa_clist
-        {
-          \c__fdu_name_department_tl,
-          \c__fdu_name_major_tl,
-          \c__fdu_name_author_tl,
-          \c__fdu_name_supervisor_tl,
-          \c__fdu_name_date_tl,
-        }
       \clist_set:Nx \l__fdu_tmpb_clist
-        {
-          { \l__fdu_info_department_tl },
-          { \l__fdu_info_major_tl      },
-          { \l__fdu_info_author_tl     },
-          { \l__fdu_info_supervisor_tl },
-          { \l__fdu_info_date_tl       }
-        }
+      {
+        { \l__fdu_info_department_tl },
+        { \l__fdu_info_major_tl      },
+        { \l__fdu_info_author_tl     },
+        { \l__fdu_info_supervisor_tl },
+        { \l__fdu_info_date_tl       }
+      }
       \__fdu_get_max_text_width:NN \l__fdu_tmpb_dim \l__fdu_tmpb_clist
-      \bool_until_do:nn
-        { \clist_if_empty_p:N \l__fdu_tmpa_clist }
-        {
-          \clist_pop:NN \l__fdu_tmpa_clist \l__fdu_tmpa_tl
-          \clist_pop:NN \l__fdu_tmpb_clist \l__fdu_tmpb_tl
-          \__fdu_spread_box:nn { 6 em } { \l__fdu_tmpa_tl }
-          \c__fdu_fwid_colon_tl
-          \__fdu_center_box:Vn \l__fdu_tmpb_dim { \l__fdu_tmpb_tl }
-          \skip_vertical:n { 1 ex }
-        }
+      
+      \__fdu_spread_box:nn { 6 em } { \c__fdu_name_department_tl } \c__fdu_fwid_colon_tl
+      \skip_horizontal:n {2 ex}
+      \__fdu_fixed_width_box:nn \l__fdu_tmpb_dim { \l__fdu_info_department_tl }
+      \skip_vertical:n { 1 ex }
+      
+      \__fdu_spread_box:nn { 6 em } { \c__fdu_name_major_tl      } \c__fdu_fwid_colon_tl
+      \skip_horizontal:n {2 ex}
+      \__fdu_fixed_width_box:nn \l__fdu_tmpb_dim { \l__fdu_info_major_tl      }
+      \skip_vertical:n { 1 ex }
+      
+      \__fdu_spread_box:nn { 6 em } { \c__fdu_name_author_tl     } \c__fdu_fwid_colon_tl
+      \skip_horizontal:n {2 ex}
+      \__fdu_fixed_width_box:nn \l__fdu_tmpb_dim { \l__fdu_info_author_tl     }
+      \skip_vertical:n { 1 ex }
+      
+      \__fdu_spread_box:nn { 6 em } { \c__fdu_name_supervisor_tl } \c__fdu_fwid_colon_tl
+      \skip_horizontal:n {2 ex}
+      \__fdu_fixed_width_box:nn \l__fdu_tmpb_dim { \l__fdu_info_supervisor_tl }
+      \skip_vertical:n { 1 ex }
+      
+      \__fdu_spread_box:nn { 6 em } { \c__fdu_name_date_tl       } \c__fdu_fwid_colon_tl
+      \skip_horizontal:n {2 ex}
+      \__fdu_fixed_width_box:nn \l__fdu_tmpb_dim { \l__fdu_info_date_tl       }
+      \skip_vertical:n { 1 ex }
     \end{minipage}
   }
 \cs_new_protected:Npn \__fdu_cover_signature:N #1
@@ -1572,13 +1612,13 @@
       {
         \tl_if_eq:VnTF \l__fdu_bib_gb_style_tl { numerical }
           {
-            \bibliographystyle { gbt7714-2005 }
+            \bibliographystyle { gbt7714-unsrt }
             \__fdu_set_cite_style_numerical:
           }
           {
             \tl_if_eq:VnT \l__fdu_bib_gb_style_tl { author-year }
               {
-                \bibliographystyle { gbt7714-2005 }
+                \bibliographystyle { gbt7714-plain }
                 \__fdu_set_cite_style_author_year:
                 \cs_set_eq:NN \cite \citep
               }

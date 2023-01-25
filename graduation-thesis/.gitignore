@@ -1,0 +1,13 @@
+*.aux
+*.fls
+*.synctex.gz
+fduthesis.pdf
+*.log
+*.out
+*.toc
+*.thm
+*.lof
+*.bbl
+*.blg
+_*
+.DS_Store
