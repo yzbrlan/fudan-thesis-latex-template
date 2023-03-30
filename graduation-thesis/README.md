@@ -6,7 +6,17 @@
 
 更多信息请跳转至：https://github.com/stone-zeng/fduthesis
 
-# 新手上路
+# 新手上路：在线编译
+
+## 下载模版
+将 graduation-thesis 整个文件夹下载下来，打包为zip
+
+## Overleaf在线编译器
+将 zip 上传到overleaf在线latex编译器，打开fdthesis.tex主文件进行编译。
+
+具体示例请看：[Overleaf中复旦毕业论文模版 fudan-graduation-thesis](https://www.overleaf.com/read/czjxjrcwrvtx)
+
+# 新手上路：本地编译
 
 1. 安装Latex
 2. 安装编辑器vscode
