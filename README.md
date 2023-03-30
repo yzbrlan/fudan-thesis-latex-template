@@ -1,6 +1,6 @@
 # fudan-thesis-latex-template
 
-## Course-thesis
+## course-thesis
 
 - 参考文献样式：采用了 gbt7714-2005 参考标准，具体下载链接为 https://github.com/Haixing-Hu/GBT7714-2005-BibTeX-Style
 
